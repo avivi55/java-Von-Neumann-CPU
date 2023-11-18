@@ -1,0 +1,55 @@
+# CPU in Java
+
+This project was made as part of a presentation for a `computer architecture` class.
+
+It replicates a **Von Neumann** type microprocessor.
+
+You can control it with a crude assembly language. Its intent is only for testing purposes.
+This assembly language is described as follows:
+
+- **Registers**
+    - Registers can only contain integers.
+    - Registers are 32bits
+    - We only have 10 general purpose registers.
+    - General purpose registers are noted Rn, where n is an integer.
+    - The arithmetic register ot accumulator is the `R0` register.
+      ( e.g. `DIV R2 R1` <=> `R0 = R2/R1`)
+    - The counter register is the `R9` register (in the use of `JZ`)
+
+
+- **Syntax**
+    - Constants are denoted as $n, where n is an integer.
+    - The syntax resembles AT&T assembly syntax : `Instruction` `sender` `receiver`
+      ( e.g. `mov $5 R0` or `SUB R2 R1` <=> `R2-R1`)
+    - If a register is required and non are given,
+      `R0` will be used as first parameter and `R1` as second.
+    - Instructions are case-insensitive.
+    - Comments exist as a **line** that starts with `#` ( e.g. `# this is a comment`)
+    - Empty lines can exist
+
+`R` : register
+
+`C` : constant
+
+`<empty field>` : parameter unused
+
+| Instruction name | parameter 1 | parameter 2 | description                                                                    |
+|:----------------:|:-----------:|:-----------:|--------------------------------------------------------------------------------|
+|       JMP        |      C      |             | Jumps to the specified line number in the assembly code.                       |
+|        JZ        |      C      |             | equivalent to JMP, but only if `R9` = 0.                                       |
+|        LS        |      R      |             | Makes a left shift of the bits (effectively a *2).                             |
+|        RS        |      R      |             | Makes a right shift of the bits (effectively a /2).                            |
+|       INC        |      R      |             | Increments the value stored in the register.                                   |
+|       DEC        |      R      |             | Decrements the value stored in the register.                                   |
+|       OUT        |      R      |             | Prints out the content of the register.                                        |
+|       OUTC       |      R      |             | Prints out the content of the register as its ascii character.                 |
+|                  |             |             |                                                                                |
+|       MOV        |   C or R    |      R      | Basically an `=`, you can copy data from a register or constant to a register. |
+|       ADD        |      R      |      R      | Calculates the sum of the two registers.                                       |
+|       SUB        |      R      |      R      | Calculates the difference of the two registers.                                |
+|       MUL        |      R      |      R      | Calculates the product.                                                        |
+|       DIV        |      R      |      R      | Calculates the integer quotient.                                               |
+|       AND        |      R      |      R      | Calculates bitwise `and`.                                                      |
+|        OR        |      R      |      R      | Calculates bitwise `or`.                                                       |       
+
+The assembly language is interpreted.
