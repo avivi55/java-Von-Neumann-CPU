@@ -43,6 +43,7 @@ This assembly language is described as follows:
 |        RS        |     R     |           | Makes a right shift of the bits (effectively a `÷ 2`).                         |
 |       INC        |     R     |           | Increments the value stored in the register.                                   |
 |       DEC        |     R     |           | Decrements the value stored in the register.                                   |
+|       NOT        |     R     |           | Inverts the bits in the register                                               |
 |       OUT        |     R     |           | Prints out the content of the register.                                        |
 |       OUTC       |     R     |           | Prints out the content of the register as its ascii character.                 |
 |                  |           |           |                                                                                |
