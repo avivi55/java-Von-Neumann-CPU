@@ -5,6 +5,7 @@ import project.cpu.GeneralPurposeRegister;
 import project.cpu.Register;
 
 import java.nio.file.Path;
+import java.util.Arrays;
 
 public class CPU {
     public static Register[] generalPurposeRegisters = new Register[10];
@@ -13,9 +14,17 @@ public class CPU {
             generalPurposeRegisters[i] = new GeneralPurposeRegister(0, i);
     }
 
-    public static void main(String[] arg){
-        MemoryBlock.loadAssemblyFile(Path.of("fibonacci.s"));
-//        MemoryBlock.loadAssemblyFile(Path.of("test.s"));
+    public static void run(Path file){
+        MemoryBlock.loadAssemblyFile(file);
         CU.cycle();
+        MemoryBlock.clear();
+        for (Register generalPurposeRegister : generalPurposeRegisters) generalPurposeRegister.setData(0);
+        System.out.println();
+    }
+
+    public static void main(String[] args){
+        run(Path.of("assembly/hello_c.s"));
+        run(Path.of("assembly/fibonacci.s"));
+        run(Path.of("assembly/circle_area.s"));
     }
 }

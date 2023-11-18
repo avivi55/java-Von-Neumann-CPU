@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MemoryBlock {
-    public static byte[] array = new byte[200];
     public static List<OpCode> instructions = new ArrayList<>();
 
     static void loadAssemblyFile(Path path){
@@ -23,7 +22,6 @@ public class MemoryBlock {
     }
 
     static void clear(){
-        instructions.removeAll(instructions);
-
+        instructions = new ArrayList<>();
     }
 }

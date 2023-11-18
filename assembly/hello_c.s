@@ -5,8 +5,6 @@ OUTC
 MOV $'L' R0
 OUTC
 OUTC
-MOV $'L' R0
-OUTC
 MOV $'O' R0
 OUTC
 
@@ -24,6 +22,4 @@ OUTC
 MOV $'D' R0
 OUTC
 MOV $'!' R0
-OUTC
-MOV $'\n' R0
 OUTC

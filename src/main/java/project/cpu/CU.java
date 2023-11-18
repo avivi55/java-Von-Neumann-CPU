@@ -20,7 +20,8 @@ public class CU {
             jump(line);
     }
     public static void cycle(){
-        for (; programCounter.getData().getInt() < MemoryBlock.instructions.size();
+        for (programCounter.setData(0);
+             programCounter.getData().getInt() < MemoryBlock.instructions.size();
              programCounter.setData(ALU.increment(programCounter.getData()))) {
 
             OpCode instruction =  MemoryBlock.instructions.get(programCounter.getData().getInt());
