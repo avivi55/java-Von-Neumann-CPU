@@ -17,9 +17,10 @@ This assembly language is described as follows:
 
 
 - **Syntax**
-    - Constants are denoted as $n, where n is an integer or a character.
-        - a space character is `$'\s'`
-        - a new line character is `$'\n'`
+    - Immediates are denoted as $n, where n is an integer or a character.
+        - a space character is `$'\s'`.
+        - a new line character is `$'\n'`.
+        - an immediate is internally a new temporary register containing the value.
     - The syntax resembles AT&T assembly syntax : `Instruction` `sender` `receiver`
       ( e.g. `mov $5 R0` or `SUB R2 R1` <=> `R2-R1`)
     - If a register is required and non are given,
@@ -32,12 +33,12 @@ This assembly language is described as follows:
 
 `C` : constant
 
-`<empty field>` : operand unused
+`<empty field>` : operand unused, can be specified but will be ignored.
 
 | Instruction name | operand 1 | operand 2 | description                                                                    |
 |:----------------:|:---------:|:---------:|--------------------------------------------------------------------------------|
-|       JMP        |     C     |           | Jumps to the specified line number in the assembly code.                       |
-|        JZ        |     C     |           | equivalent to JMP, but only if `R9` ≠ 0.                                       |
+|       JMP        |    C/R    |           | Jumps to the specified line number in the assembly code.                       |
+|        JZ        |    C/R    |           | equivalent to JMP, but only if `R9` ≠ 0.                                       |
 |        LS        |     R     |           | Makes a left shift of the bits (effectively a `× 2`).                          |
 |        RS        |     R     |           | Makes a right shift of the bits (effectively a `÷ 2`).                         |
 |       INC        |     R     |           | Increments the value stored in the register.                                   |
@@ -47,7 +48,7 @@ This assembly language is described as follows:
 |       OUTC       |     R     |           | Prints out the content of the register as its ascii character.                 |
 |        IN        |     R     |           | Scans the stdin and puts (only integer) in the register.                       |
 |                  |           |           |                                                                                |
-|       MOV        |  C or R   |     R     | Basically an `=`, you can copy data from a register or constant to a register. |
+|       MOV        |    C/R    |     R     | Basically an `=`, you can copy data from a register or constant to a register. |
 |       ADD        |     R     |     R     | Calculates the sum of the two registers.                                       |
 |       SUB        |     R     |     R     | Calculates the difference of the two registers.                                |
 |       MUL        |     R     |     R     | Calculates the product.                                                        |
