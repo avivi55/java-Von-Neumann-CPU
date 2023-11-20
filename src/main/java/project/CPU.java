@@ -22,10 +22,4 @@ public class CPU {
         for (Register generalPurposeRegister : generalPurposeRegisters) generalPurposeRegister.setData(0);
         System.out.println();
     }
-
-    public static void main(String[] args) throws IOException {
-        run(Path.of("assembly/hello_c.s"));
-        run(Path.of("assembly/fibonacci.s"));
-        run(Path.of("assembly/circle_area.s"));
-    }
 }
