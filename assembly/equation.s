@@ -1,10 +1,17 @@
 # (5x+4)/2 + 3y
 
+mov $'\n' R0
 # x
-mov $1 R9
+mov $'x' R9
+outc R9
+outc
+in R9
 
 # y
-mov $1 R8
+mov $'y' R8
+outc R8
+outc
+in R8
 
 
 mov $4 R2

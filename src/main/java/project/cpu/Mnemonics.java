@@ -27,11 +27,9 @@ public enum Mnemonics {
     JZ((r, r1) -> CU.jumpUntilZero(r.getData().getInt())),
     OUT((r, r1) -> System.out.print(r.getData().getInt())),
     OUTC((r, r1) -> System.out.print(r.getData().getChar())),
+    IN((r, r1) -> CU.scan(r)),
 
     NOTHING((r, r1) -> {});
-
-    static final List<Mnemonics> oneArgument = List.of(JMP, JZ, LS, RS, OUT, OUTC, INC, DEC);
-    static final List<Mnemonics> twoArgument = List.of(MOV, MUL, ADD, AND, SUB, DIV, OR);
 
     private final Operation operation;
 

@@ -27,7 +27,6 @@ This assembly language is described as follows:
     - Instructions are case-insensitive.
     - Comments exist as a standalone **line** that starts with `#` ( e.g. `# this is a comment`)
     - Empty lines can exist.
-- It does not have input support.
 
 `R` : register
 
@@ -46,6 +45,7 @@ This assembly language is described as follows:
 |       NOT        |     R     |           | Inverts the bits in the register                                               |
 |       OUT        |     R     |           | Prints out the content of the register.                                        |
 |       OUTC       |     R     |           | Prints out the content of the register as its ascii character.                 |
+|        IN        |     R     |           | Scans the stdin and puts (only integer) in the register.                       |
 |                  |           |           |                                                                                |
 |       MOV        |  C or R   |     R     | Basically an `=`, you can copy data from a register or constant to a register. |
 |       ADD        |     R     |     R     | Calculates the sum of the two registers.                                       |

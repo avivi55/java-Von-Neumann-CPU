@@ -3,7 +3,7 @@ mov $1000 R2
 mov $1000000 R3
 
 # the radius
-mov $4 R0
+in R0
 
 mul R0
 
