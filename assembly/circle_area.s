@@ -20,6 +20,6 @@ div R0 R3
 
 out R0
 # '.' character
-mov $46 R3
+mov $'.' R3
 outc R3
 out R2
