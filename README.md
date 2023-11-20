@@ -86,8 +86,8 @@ MOV $'!' R0
 OUTC
 ```
 example of a fibonacci sequence calculator
-https://github.com/avivi55/java-Von-Neumann-CPU/blob/1177e8b85a8962b915ec164bd07d43944afcb585/fibonacci.s#L1-L32
+https://github.com/avivi55/java-Von-Neumann-CPU/blob/29fee03ffb50131b4f807eade87a99dcf40109ef/assembly/fibonacci.s#L1-L26
 
 
 even tho the language does not support floating points, you can manipulate a poor version of it
-https://github.com/avivi55/java-Von-Neumann-CPU/blob/1177e8b85a8962b915ec164bd07d43944afcb585/circle_area.s#L1-L25
+https://github.com/avivi55/java-Von-Neumann-CPU/blob/452f477d31cd8ea3fd1cba3c64e38141cadf4100/assembly/circle_area.s#L1-L25
