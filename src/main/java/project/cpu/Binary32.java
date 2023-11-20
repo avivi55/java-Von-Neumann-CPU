@@ -3,14 +3,11 @@ package project.cpu;
 import java.nio.ByteBuffer;
 
 public class Binary32 {
-    public byte[] byteArray = new byte[4];
+    public byte[] byteArray;
     public Binary32(Integer i) {
         byteArray = ByteBuffer.allocate(4)
                 .putInt(i)
                 .array();
-    }
-    public Binary32(Character c) {
-        this((int) c);
     }
 
     public Binary32(byte[] array){

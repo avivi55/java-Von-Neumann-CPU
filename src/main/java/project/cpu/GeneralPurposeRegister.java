@@ -7,9 +7,4 @@ public class GeneralPurposeRegister extends Register{
         super(data);
         this.index = index;
     }
-
-    public GeneralPurposeRegister(Character data, int index) {
-        super(data);
-        this.index = index;
-    }
 }

@@ -1,7 +1,5 @@
 package project.cpu;
 
-import java.util.List;
-
 public enum Mnemonics {
     // Arithmetics
     ADD((r, r1) -> ALU.addition(r.getData(), r1.getData())),
