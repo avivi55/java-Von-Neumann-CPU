@@ -21,7 +21,7 @@ outc
 
 mod r1 r5
 mov r0 r9
-jz $34
+jz $36
 jmp $26
 
 mov $'B'
@@ -31,4 +31,7 @@ outc
 mov $'z'
 outc
 outc
+jmp $37
+
+out r1
 
