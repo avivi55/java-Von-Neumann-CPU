@@ -23,4 +23,4 @@ MOV R0 R1
 
 # loop
 DEC R9
-JZ $18
+JNZ $18

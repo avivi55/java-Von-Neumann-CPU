@@ -15,7 +15,7 @@ public class CU {
         programCounter.setData(Math.max(line - 2, 0));
     }
 
-    public static void jumpUntilZero(int line){
+    public static void jumpIfNotZero(int line){
         if(CPU.generalPurposeRegisters[9].getData().getInt() != 0)
             jump(line);
     }

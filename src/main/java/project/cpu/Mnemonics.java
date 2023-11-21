@@ -24,7 +24,7 @@ public enum Mnemonics {
 
     // Programming
     JMP((r, r1) -> CU.jump(r.getData().getInt())),
-    JZ((r, r1) -> CU.jumpUntilZero(r.getData().getInt())),
+    JNZ((r, r1) -> CU.jumpIfNotZero(r.getData().getInt())),
     OUT((r, r1) -> IOBlock.print(r)),
     OUTC((r, r1) -> IOBlock.printAsCharacter(r)),
     IN((r, r1) -> IOBlock.scan(r)),

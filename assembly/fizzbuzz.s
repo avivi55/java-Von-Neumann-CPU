@@ -7,7 +7,7 @@ mod r1 r3
 mov r0 r9
 
 # if not divisible by 3 -> skip print fizz
-jz $21
+jnz $21
 # else -> fizz print
 jmp $13
 
@@ -21,7 +21,7 @@ outc
 
 mod r1 r5
 mov r0 r9
-jz $36
+jnz $36
 jmp $26
 
 mov $'B'

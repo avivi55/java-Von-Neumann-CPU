@@ -25,7 +25,7 @@ This assembly language is described as follows:
       ( e.g. `mov $5 R0` or `SUB R2 R1` <=> `R2-R1`)
     - If a register is required and non are given,
       `R0` will be used as first operand and `R1` as second.
-    - Instructions are case-insensitive.
+    - The language is case-insensitive.
     - Comments exist as a standalone **line** that starts with `#` ( e.g. `# this is a comment`)
     - Empty lines can exist.
 
@@ -38,7 +38,7 @@ This assembly language is described as follows:
 | Instruction name | operand 1 | operand 2 | description                                                                    |
 |:----------------:|:---------:|:---------:|--------------------------------------------------------------------------------|
 |       JMP        |    C/R    |           | Jumps to the specified line number in the assembly code.                       |
-|        JZ        |    C/R    |           | equivalent to JMP, but only if `R9` ≠ 0.                                       |
+|       JNZ        |    C/R    |           | equivalent to JMP, but only if `R9` ≠ 0.                                       |
 |        LS        |     R     |           | Makes a left shift of the bits (effectively a `× 2`).                          |
 |        RS        |     R     |           | Makes a right shift of the bits (effectively a `÷ 2`).                         |
 |       INC        |     R     |           | Increments the value stored in the register.                                   |
