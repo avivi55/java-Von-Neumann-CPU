@@ -78,7 +78,7 @@ public class AssemblyParser {
             throw new IllegalArgumentException("Not a valid first operand for some odd reason!");
 
         switch (supposedFirstOperand.charAt(0)) {
-            case 'R' -> {
+            case 'R','r' -> {
                 int registerNumber;
                 try{
                     registerNumber = Integer.parseInt(supposedFirstOperand.substring(1));
@@ -124,7 +124,7 @@ public class AssemblyParser {
         if (supposedSecondOperand.isEmpty())
             throw new IllegalArgumentException("Not a valid second operand for some odd reason!");
 
-        if (supposedSecondOperand.charAt(0) != 'R')
+        if (supposedSecondOperand.charAt(0) != 'R' && supposedSecondOperand.charAt(0) != 'r')
             throw new IllegalArgumentException("A second operand must be a register!");
 
         int registerNumber;
