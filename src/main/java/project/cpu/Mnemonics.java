@@ -1,5 +1,7 @@
 package project.cpu;
 
+import project.IOBlock;
+
 public enum Mnemonics {
     // Arithmetics
     ADD((r, r1) -> ALU.addition(r.getData(), r1.getData())),
@@ -23,9 +25,9 @@ public enum Mnemonics {
     // Programming
     JMP((r, r1) -> CU.jump(r.getData().getInt())),
     JZ((r, r1) -> CU.jumpUntilZero(r.getData().getInt())),
-    OUT((r, r1) -> System.out.print(r.getData().getInt())),
-    OUTC((r, r1) -> System.out.print(r.getData().getChar())),
-    IN((r, r1) -> CU.scan(r)),
+    OUT((r, r1) -> IOBlock.print(r)),
+    OUTC((r, r1) -> IOBlock.printAsCharacter(r)),
+    IN((r, r1) -> IOBlock.scan(r)),
 
     NOTHING((r, r1) -> {});
 

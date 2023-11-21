@@ -3,20 +3,12 @@ package project.cpu;
 import project.CPU;
 import project.MemoryBlock;
 
-import java.util.Scanner;
-
 /**
  * Control Unit
  */
 public class CU {
     public static Register programCounter = new Register(0);
 
-
-    public static void scan(Register r){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter integer: ");
-        r.setData(scanner.nextInt());
-    }
     public static void jump(int line){
         if (line > MemoryBlock.instructions.size())
             throw new IndexOutOfBoundsException("jumping to non existent line !");
